@@ -15,7 +15,7 @@
     
 " plugin
   " NerdTree
-"	autocmd VimEnter * NERDTree
+	autocmd VimEnter * NERDTree
 
 " autocomplete
   " keep tab
