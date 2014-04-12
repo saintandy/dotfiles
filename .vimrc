@@ -11,7 +11,7 @@
   syntax on
   set t_Co=256
   set background=dark
-  colo solarized
+  colo solarized256
     
 " plugin
   " NerdTree
