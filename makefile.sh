@@ -1,9 +1,8 @@
-
 	cd
-	sudo apt-get install dconf-cli
-	git clone https://github.com/sigurdga/gnome-terminal-colors-solarized
-	cd gnome-terminal-colors-solarized
-	./install
+sudo apt-get install dconf-cli
+git clone https://github.com/sigurdga/gnome-terminal-colors-solarized
+cd gnome-terminal-colors-solarized
+./install.sh
 
     sudo apt-get install xchat-gnome
     sudo apt-get install tree
@@ -40,6 +39,3 @@
         git clone https://bitbucket.org/vladtarniceru/acm.timus.ru
         git clone https://bitbucket.org/vladtarniceru/campion
         git clone https://bitbucket.org/vladtarniceru/projecteuler
-		
-		
-		
