@@ -1,0 +1,25 @@
+#/bin/bash
+
+if [ $1 ] ; then
+	name=$1;
+else
+	echo ''
+	echo 'wrong format: please enter the name of the program, the input file and the output file'
+	echo 'ex: newprog sum.cpp sum.in sum.out'
+	echo ''
+	exit
+fi
+
+if [ $2 ] ; then
+	input=$2
+fi
+
+if [ $3 ] ; then
+	output=$3
+fi
+
+touch $1
+touch $2
+touch $3
+
+

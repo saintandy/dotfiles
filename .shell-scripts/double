@@ -1,0 +1,10 @@
+
+if [ $1 ] ; then
+	gnome-terminal --working-directory=$1 &
+	gnome-terminal --working-directory=$1 &
+else
+	gnome-terminal &
+	gnome-terminal &
+fi
+
+
