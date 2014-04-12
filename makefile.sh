@@ -1,4 +1,5 @@
 
+	cd
 	sudo apt-get install dconf-cli
 	git clone https://github.com/sigurdga/gnome-terminal-colors-solarized
 	cd gnome-terminal-colors-solarized
@@ -20,17 +21,15 @@
     sudo apt-get install audacious
     sudo apt-get install pidgin
     
-    
-    firefox http://www.skype.com/en/download-skype/skype-for-linux/downloading/?type=ubuntu32
-    cd ~/Downloads
-        dpkg -i skype-ubuntu-lucid_4.2.0.11-1_i386.deb
-        sudo apt-get update -f
-    
-    
+
     cd ~/dotfiles
         sudo cp .bashrc ~/.bashrc
         sudo cp .shell-scripts/* /usr/bin
         sudo cp -r .vim ~/
+    
+    cd ~/dotfiles
+        sudo cp -r .vim ~/.vim
+        sudo cp -r .vimrc ~/.vimrc
     
     mkdir ~/Algorithms
     cd ~/Algorithms
