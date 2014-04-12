@@ -1,0 +1,46 @@
+
+	sudo apt-get install dconf-cli
+	git clone https://github.com/sigurdga/gnome-terminal-colors-solarized
+	cd gnome-terminal-colors-solarized
+	./install
+
+    sudo apt-get install xchat-gnome
+    sudo apt-get install tree
+    sudo apt-get install xclip
+ 
+    sudo apt-get install vim
+    sudo apt-get install vim-gnome
+    
+    sudo apt-get install python3
+    sudo apt-get install g++
+    sudo apt-get install c++11
+    sudo apt-get install php
+    
+    
+    sudo apt-get install audacious
+    sudo apt-get install pidgin
+    
+    
+    firefox http://www.skype.com/en/download-skype/skype-for-linux/downloading/?type=ubuntu32
+    cd ~/Downloads
+        dpkg -i skype-ubuntu-lucid_4.2.0.11-1_i386.deb
+        sudo apt-get update -f
+    
+    
+    cd ~/dotfiles
+        sudo cp .bashrc ~/.bashrc
+        sudo cp .shell-scripts/* /usr/bin
+        sudo cp -r .vim ~/
+    
+    mkdir ~/Algorithms
+    cd ~/Algorithms
+        git clone https://bitbucket.org/vladtarniceru/infoarena
+        git clone https://bitbucket.org/vladtarniceru/infoarena-arhiva-educationala
+        git clone https://bitbucket.org/vladtarniceru/usaco
+        git clone https://bitbucket.org/vladtarniceru/acm.sgu.ru
+        git clone https://bitbucket.org/vladtarniceru/acm.timus.ru
+        git clone https://bitbucket.org/vladtarniceru/campion
+        git clone https://bitbucket.org/vladtarniceru/projecteuler
+		
+		
+		
