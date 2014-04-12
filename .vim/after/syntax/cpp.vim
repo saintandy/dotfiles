@@ -52,7 +52,10 @@ hi def link cCustomFunc  Function
 "   http://www.vim.org/scripts/script.php?script_id=2224
 "   http://www.vim.org/scripts/script.php?script_id=1640
 " -----------------------------------------------------------------------------
-syntax keyword cppSTLconstant vlad
+syntax keyword cppConstant vlad
+syntax keyword cppStatement foreach
+syntax keyword cppType int64
+
 syntax keyword cppSTLconstant badbit
 syntax keyword cppSTLconstant digits
 syntax keyword cppSTLconstant digits10
