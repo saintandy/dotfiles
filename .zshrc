@@ -65,7 +65,7 @@ export _JAVA_OPTIONS="-Xmx2g"
 
 setopt shwordsplit
 setopt PROMPT_SUBST
-export PROMPT='$FG[161][$(date "+%a %d %h - %r")] $FG[208][$(users | wc -w | cut -c 8-)] %(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%#%{$reset_color%} '
+export PROMPT='$FG[161]($(date "+%a %d %h - %r")) $FG[208][$(users | wc -w | cut -c 8-)] %(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%#%{$reset_color%} '
 
 schedprompt() {
     emulate -L zsh
