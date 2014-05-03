@@ -73,14 +73,6 @@ set guioptions-=L
 
 
 
-
-
-
-
-
-
-
-
 " Copyright (C) 2011 by Strahinja Markovic
 "
 " Permission is hereby granted, free of charge, to any person obtaining a copy
