@@ -1,143 +1,120 @@
 
-" basic stuff
-  set autoindent
-  set number
-  set mouse=a
-  set softtabstop=4 shiftwidth=4 tabstop=4
-" set expandtab softtabstop=4
-  set wildmenu
-  set nowrap
-  
-" colorscheme
-  syntax on
-  set t_Co=256
-  set background=dark
-  colo twilight
-  let g:ophigh_color="#998f84"
- 
-" plugin
-  " NerdTree
-"	autocmd VimEnter * NERDTree
-
-" autocomplete
-  " keep tab
-    inoremap <ENTER> <ENTER><Space><Backspace>
-    noremap o o<Space><Backspace>
-    noremap O O<Space><Backspace>
-  " brace completion
-    inoremap {<CR> {<CR>}<C-o>O<Tab>
-  " brace deletion
-    inoremap <C-x> <ESC>%xx``la<Backspace>
-	nnoremap <C-x> %xx``x
-
-" navigation
-  " fast scrolling
-    set scrolloff=999
-
-" instead of :
-  nnoremap ; :
-  nnoremap : ;
-  vnoremap ; :
-  vnoremap : ;
- 
-" fast ESC
-
-" compile and run
-  function CompileAndRun()
-    if &filetype == 'c'
-        !gcc % && ./a.out && rm a.out
-    elseif &filetype == 'cpp'
-        !g++ -std=c++0x % && ./a.out && rm a.out
-    elseif &filetype == 'py'
-        !python %
-    elseif &filetype == 'php'
-        !php %
-    elseif &filetype == 'perl'
-        !perl %
-    elseif &filetype == 'sh'
-        !bash %
-    endif
-  endfunction
-  
-  function RunCodeforces()
-  	!./.test %
-  endfunction
-
-  command C call CompileAndRun()
-  command Z call RunCodeforces()
-  
-
-set guifont=PT\ Mono:h14
 set guioptions-=r
 set guioptions-=L
 
+set t_Co=256
+colorscheme badwolf
 
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set bs=2
+set ignorecase
+set smartcase
+set gdefault
+set autoindent
+set autowrite
+set hlsearch
+set incsearch
+set vb t_vb=
+set ruler
+set cursorline
+set mouse=a
+syntax on
+setlocal spell spelllang=en
+set nospell
+set encoding=utf-8
+set number
+set modeline
+nnoremap / /\v
+vnoremap / /\v
+nnoremap ? ?\v
+vnoremap ? ?\v
+let mapleader = ","
+nnoremap <leader><space> :noh<cr>
+nnoremap <leader>t :tabnew<cr>:e<space>
+nnoremap <leader>z <C-w><C-w>
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
+nnoremap <up> gk
+nnoremap <down> gj
 
-" Copyright (C) 2011 by Strahinja Markovic
-"
-" Permission is hereby granted, free of charge, to any person obtaining a copy
-" of this software and associated documentation files (the "Software"), to deal
-" in the Software without restriction, including without limitation the rights
-" to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-" copies of the Software, and to permit persons to whom the Software is
-" furnished to do so, subject to the following conditions:
-"
-" The above copyright notice and this permission notice shall be included in
-" all copies or substantial portions of the Software.
-"
-" THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-" IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-" FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-" AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-" LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-" OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-" THE SOFTWARE.
+set updatetime=3000
+autocmd CursorHoldI * silent w
 
-if exists( 'g:loaded_operator_highlight' )
-  finish
-else
-  let g:loaded_operator_highlight = 1
-endif
+" Tab autocompletes
+function! Mosh_Tab_Or_Complete()
+    if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+        return "\<C-N>"
+    else
+        return "\<Tab>"
+endfunction
 
-if !exists( 'g:ophigh_color' )
-  let g:ophigh_color = "cyan"
-endif
+:inoremap <Tab> <C-R>=Mosh_Tab_Or_Complete()<CR>
 
-if !exists( 'g:ophigh_filetypes_to_ignore' )
-  let g:ophigh_filetypes_to_ignore = {}
-endif
+:iab fales false
+:iab fasle false
+:iab sceond second
+:iab secnod second
+:iab secndo second
+:iab incldue include
+:iab inclde include
 
-fun! s:IgnoreFiletypeIfNotSet( file_type )
-  if get( g:ophigh_filetypes_to_ignore, a:file_type, 1 )
-    let g:ophigh_filetypes_to_ignore[ a:file_type ] = 1
+command! W :w
+command! Q :q
+
+set mouse=a
+set nohidden
+set wildmenu
+
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
+
+map N Nzz
+map n nzz
+
+" Save, compile and run files
+function! CompileAndRun()
+  write
+  if &filetype == 'c'
+    !gcc % && ./a.out && rm a.out
+  elseif &filetype == 'cpp'
+    !g++ -std=c++0x % && ./a.out && rm a.out
+  elseif &filetype == 'py'
+    !python %
+  elseif &filetype == 'php'
+    !php %
+  elseif &filetype == 'perl'
+    !perl %
+  elseif &filetype == 'sh'
+    !bash %
   endif
 endfunction
 
-call s:IgnoreFiletypeIfNotSet('help')
-call s:IgnoreFiletypeIfNotSet('markdown')
-call s:IgnoreFiletypeIfNotSet('qf') " This is for the quickfix window
-call s:IgnoreFiletypeIfNotSet('conque_term')
-call s:IgnoreFiletypeIfNotSet('diff')
-call s:IgnoreFiletypeIfNotSet('html')
-call s:IgnoreFiletypeIfNotSet('css')
-call s:IgnoreFiletypeIfNotSet('less')
-call s:IgnoreFiletypeIfNotSet('xml')
-call s:IgnoreFiletypeIfNotSet('sh')
-call s:IgnoreFiletypeIfNotSet('bash')
-call s:IgnoreFiletypeIfNotSet('notes')
-call s:IgnoreFiletypeIfNotSet('jinja')
-
-fun! s:HighlightOperators()
-  if get( g:ophigh_filetypes_to_ignore, &filetype, 0 )
-    return
-  endif
-
-  " for the last element of the regex, see :h /\@!
-  " basically, searching for "/" is more complex since we want to avoid
-  " matching against "//" or "/*" which would break C++ comment highlighting
-  syntax match OperatorChars "?\|+\|-\|\*\|;\|:\|,\|<\|>\|&\||\|!\|\~\|%\|=\|)\|(\|{\|}\|\.\|\[\|\]\|/\(/\|*\)\@!"
-  exec "hi OperatorChars guifg=" . g:ophigh_color . " gui=NONE"
+function! CodeforcesCompile()
+  write
+  !./.test %
 endfunction
 
-au Syntax * call s:HighlightOperators()
+nnoremap <leader>c :w!<cr>:call CompileAndRun()<cr>
+nnoremap <leader>m :w!<cr>:call CodeforcesCompile()<cr>
+inoremap <leader>c <ESC><cr>:w!<cr>:call CompileAndRun()<cr>
+inoremap <leader>m <ESC><cr>:w!<cr>:call CodeforcesCompile()<cr>
+
+syn keyword Type int64
+syn keyword Statement foreach
+
+" keep tab
+  inoremap <ENTER> <ENTER><Space><Backspace>
+  noremap o o<Space><Backspace>
+  noremap O O<Space><Backspace>
+" brace completion
+  inoremap {<CR> {<CR>}<C-o>O<Tab>
+" brace deletion
+  inoremap <C-x> <ESC>%xx``la<Backspace>
+  nnoremap <C-x> %xx``xdd
 
