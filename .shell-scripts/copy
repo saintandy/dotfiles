@@ -10,4 +10,4 @@ else
 	exit
 fi
 
-cat $var | xclip -selection clipboard
+cat $var | pbcopy
