@@ -1,8 +1,0 @@
-#/bin/bash
-
-rm -rf *~
-rm -rf .*~
-rm -rf .*.swp
-rm -rf *.swp
-
-
