@@ -1,0 +1,13 @@
+#/bin/bash
+
+if [ $1 ] ; then
+        var=$1
+else
+        echo ''
+	echo ''
+	echo 'copy name_of_the_source'
+	echo ''        
+	exit
+fi
+
+cat $var | pbcopy
