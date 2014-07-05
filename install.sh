@@ -20,6 +20,7 @@ sudo cp .zshrc ~/
 sudo cp .bashrc ~/
 sudo cp -r .oh-my-zsh ~/
 sudo cp terminal/plathrop-zenburn.terminal ~/Desktop
+sudo cp shell-scripts/* /usr/bin
 
 echo "Please change the terminal theme (file is on Desktop)"
 
