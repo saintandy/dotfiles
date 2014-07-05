@@ -16,5 +16,5 @@ else
 	git commit -m "added $1"
 fi
 
-git push
+git push -u origin master
 
