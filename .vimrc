@@ -7,7 +7,7 @@ set guioptions-=r
 syntax on
 set bg=dark
 set t_Co=256
-colorscheme zenburn
+colorscheme molokai
 
 " set
 set autoindent
