@@ -6,7 +6,7 @@
 " Note: Based on the Monokai theme for TextMate
 " by Wimer Hazenberg and its darker variant
 " by Hamish Stuart Macpherson
-"
+"x afa
 
 hi clear
 
@@ -136,18 +136,18 @@ end
 "
 if &t_Co > 255
    if s:molokai_original == 1
-      hi Normal                   ctermbg=234
+      hi Normal                   ctermbg=0
       hi CursorLine               ctermbg=235   cterm=none
       hi CursorLineNr ctermfg=208               cterm=none
    else
-      hi Normal       ctermfg=255 ctermbg=233
+      hi Normal       ctermfg=0 ctermbg=256
       hi CursorLine               ctermbg=234   cterm=none
       hi CursorLineNr ctermfg=208               cterm=none
    endif
    hi Boolean         ctermfg=135
    hi Character       ctermfg=81
    hi Number          ctermfg=135
-   hi String          ctermfg=81
+   hi String          ctermfg=208
    hi Conditional     ctermfg=161               cterm=bold
    hi Constant        ctermfg=135               cterm=bold
    hi Cursor          ctermfg=16  ctermbg=253
@@ -234,14 +234,14 @@ if &t_Co > 255
    hi TabLineFill     ctermfg=236
 
    if exists("g:rehash256") && g:rehash256 == 1
-       hi Normal       ctermfg=255 ctermbg=234
+       hi Normal       ctermfg=0 ctermbg=256
        hi CursorLine               ctermbg=236   cterm=none
        hi CursorLineNr ctermfg=208               cterm=none
 
        hi Boolean         ctermfg=141
        hi Character       ctermfg=222
        hi Number          ctermfg=141
-       hi String          ctermfg=144
+       hi String          ctermfg=222
        hi Conditional     ctermfg=197               cterm=bold
        hi Constant        ctermfg=141               cterm=bold
 
