@@ -1,4 +1,4 @@
-" Vim color file
+color file
 "
 " Author: Tomas Restrepo <tomas@winterdom.com>
 " https://github.com/tomasr/molokai
@@ -140,14 +140,14 @@ if &t_Co > 255
       hi CursorLine               ctermbg=235   cterm=none
       hi CursorLineNr ctermfg=208               cterm=none
    else
-      hi Normal       ctermfg=255 ctermbg=233
+      hi Normal       ctermfg=252 ctermbg=233
       hi CursorLine               ctermbg=234   cterm=none
       hi CursorLineNr ctermfg=208               cterm=none
    endif
    hi Boolean         ctermfg=135
-   hi Character       ctermfg=81
+   hi Character       ctermfg=154
    hi Number          ctermfg=135
-   hi String          ctermfg=81
+   hi String          ctermfg=154
    hi Conditional     ctermfg=161               cterm=bold
    hi Constant        ctermfg=135               cterm=bold
    hi Cursor          ctermfg=16  ctermbg=253
@@ -200,9 +200,9 @@ if &t_Co > 255
    hi SpecialComment  ctermfg=245               cterm=bold
    hi Special         ctermfg=81
    if has("spell")
-       hi SpellBad                ctermbg=233
-       hi SpellCap                ctermbg=233
-       hi SpellLocal              ctermbg=233
+       hi SpellBad                ctermbg=52
+       hi SpellCap                ctermbg=17
+       hi SpellLocal              ctermbg=17
        hi SpellRare  ctermfg=none ctermbg=none  cterm=reverse
    endif
    hi Statement       ctermfg=161               cterm=bold
@@ -231,17 +231,16 @@ if &t_Co > 255
    hi NonText         ctermfg=59
 
    hi SpecialKey      ctermfg=59
-   hi TabLineFill     ctermfg=236
 
    if exists("g:rehash256") && g:rehash256 == 1
-       hi Normal       ctermfg=255 ctermbg=234
+       hi Normal       ctermfg=252 ctermbg=234
        hi CursorLine               ctermbg=236   cterm=none
        hi CursorLineNr ctermfg=208               cterm=none
 
        hi Boolean         ctermfg=141
        hi Character       ctermfg=222
        hi Number          ctermfg=141
-       hi String          ctermfg=144
+       hi String          ctermfg=222
        hi Conditional     ctermfg=197               cterm=bold
        hi Constant        ctermfg=141               cterm=bold
 

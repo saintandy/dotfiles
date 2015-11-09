@@ -5,49 +5,39 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-"Plugin 'itchyny/lightline.vim'
-"Plugin 'jelera/vim-javascript-syntax'
-"Plugin 'altercation/vim-colors-solarized'
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'Raimondi/delimitMate'
-"Plugin 'vim-scripts/AutoComplPop'
-Plugin 'acarapetis/vim-colors-github'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'sjl/gundo.vim'
 "Plugin 'Valloric/vim-operator-highlight'
-"Plugin 'jnurmine/Zenburn'
-"Plugin 'Yggdroot/indentLine'
-"Plugin 'tclem/vim-arduino'
-"Plugin 'sudar/vim-arduino-syntax'
-"Plugin 'sentientmachine/erics_vim_syntax_and_color_highlighting'
-"Plugin 'vim-scripts/javacomplete'
 Plugin 'majutsushi/tagbar'
-"Plugin 'pangloss/vim-javascript'
-"Plugin 'oplatek/Conque-Shell'
-"Plugin 'nathanaelkane/vim-indent-guides'
-"Plugin 'adragomir/javacomplete'
+Plugin 'tomasr/molokai'
+Plugin 'scrooloose/nerdtree'
 
 "autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" autocmd
 "autocmd Filetype java setlocal omnifunc=javacomplete#Complete
 "autocmd Filetype java map <leader>b :call javacomplete#GoToDefinition()<CR>
+" autocmd VimEnter *.cpp nested :TagbarOpen
 
 setlocal completefunc=javacomplete#CompleteParamsInfo 
 inoremap <buffer> <C-X><C-U> <C-X><C-U><C-P> 
 inoremap <buffer> <C-S-Space> <C-X><C-U><C-P> 
 
-let javascript_enable_domhtmlcss=1
+" invisible charachters
+set nolist
+" set listchars=tab:>\ ,eol:¬
 
 " no lag bitches
 set ttyfast " u got a fast terminal
 set scroll=3
 set lazyredraw " to avoid scrolling problems
+set scrolljump=10
 
 " some gui options
-set guifont=Source\ Code\ Pro\ Light:h8
+set guifont=Monaco:h12
 set guioptions-=L
 set guioptions-=r
 
@@ -55,7 +45,9 @@ set guioptions-=r
 syntax on
 set bg=dark
 set t_Co=256
-colo badwolf
+colorscheme molokai
+let s:contrast_bg="high"
+let s:style="light"
 
 " set
 set autoindent
@@ -76,10 +68,10 @@ set nohidden
 set nospell
 set number
 set ruler
-set shiftwidth=4
+set shiftwidth=2
 set smartcase
-set softtabstop=4
-set tabstop=4
+set softtabstop=2
+set tabstop=2
 set expandtab
 set vb t_vb=
 set wildmenu
@@ -87,8 +79,11 @@ setlocal spell spelllang=en
 
 " plugins
 let g:tagbar_left=1
+let g:NERDTreeWinPos = "right"
 let g:ophigh_color_gui = "#F6FF00"
-" autocmd VimEnter * nested :TagbarOpen
+autocmd VimEnter * nested :TagbarOpen
+" autocmd VimEnter * nested :GundoToggle
+autocmd VimEnter * nested :NERDTree
 
 " binds
 let mapleader = ","
@@ -120,6 +115,12 @@ nnoremap ; :
 vnoremap : ;
 vnoremap ; :
 
+" splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " tab autocompletes
 function! Mosh_Tab_Or_Complete()
     if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
@@ -130,6 +131,7 @@ endfunction
 inoremap <Tab> <C-R>=Mosh_Tab_Or_Complete()<CR>
 
 " aliases
+iab include include
 iab fales false
 iab fasle false
 iab inclde include
@@ -170,13 +172,6 @@ nnoremap <leader>x <ESC>:w!<cr>:call CodeforcesCompile()<cr>
 command C !cat % | pbcopy
 command Z !pastebinit % | pbcopy
 
-
-" window movement shortcuts
-"map <C-j> <C-W>j
-"map <C-k> <C-W>k
-"map <C-h> <C-W>h
-"map <C-l> <C-W>l
-
 " writing commands
   " keep tab
 " inoremap <ENTER> <ENTER><Space><Backspace>
@@ -188,3 +183,8 @@ inoremap {<CR> {<CR>}<C-o>O
 
 "au Syntax * call s:HighlightOperators()
 "au ColorScheme * call s:HighlightOperators()
+
+" ex command for toggling hex mode - define mapping if desired
+command -bar Hexmode call ToggleHex()
+
+hi Spellbad ctermbg=0

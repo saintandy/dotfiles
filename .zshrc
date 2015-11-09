@@ -101,11 +101,11 @@ function battery_charge {
     echo `$BAT_CHARGE` 2>/dev/null
 }
 
-PROMPT='
-$fg[red]$(date +"%H:%M")%{$reset_color%} usr %{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}$(collapse_pwd)%{$reset_color%}$(git_prompt_info)
-$(virtualenv_info)$fg[blue]$(prompt_char)%{$reset_color%} '
+PROMPT='%{$fg[red]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}$(collapse_pwd)%{$reset_color%}$(git_prompt_info)
+%{$fg[blue]%}$(virtualenv_info)$(prompt_char)%{$reset_color%} '
+RPROMPT='%{$fg[blue]%}$(date "+%H:%M")%{$reset_color%}'
 
-ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[yellow]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
