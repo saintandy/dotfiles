@@ -140,7 +140,7 @@ if &t_Co > 255
       hi CursorLine               ctermbg=235   cterm=none
       hi CursorLineNr ctermfg=208               cterm=none
    else
-      hi Normal       ctermfg=252 ctermbg=233
+      hi Normal       ctermfg=253 ctermbg=233
       hi CursorLine               ctermbg=234   cterm=none
       hi CursorLineNr ctermfg=208               cterm=none
    endif
@@ -184,7 +184,7 @@ if &t_Co > 255
 
    " complete menu
    hi Pmenu           ctermfg=81  ctermbg=16
-   hi PmenuSel        ctermfg=255 ctermbg=242
+   hi PmenuSel        ctermfg=255 ctermbg=232
    hi PmenuSbar                   ctermbg=232
    hi PmenuThumb      ctermfg=81
 
@@ -206,8 +206,8 @@ if &t_Co > 255
        hi SpellRare  ctermfg=none ctermbg=none  cterm=reverse
    endif
    hi Statement       ctermfg=161               cterm=bold
-   hi StatusLine      ctermfg=238 ctermbg=253
-   hi StatusLineNC    ctermfg=244 ctermbg=232
+   hi StatusLine      ctermfg=234 ctermbg=253
+   hi StatusLineNC    ctermfg=233 ctermbg=253
    hi StorageClass    ctermfg=208
    hi Structure       ctermfg=81
    hi Tag             ctermfg=161
@@ -218,7 +218,7 @@ if &t_Co > 255
    hi Type            ctermfg=81                cterm=none
    hi Underlined      ctermfg=244               cterm=underline
 
-   hi VertSplit       ctermfg=244 ctermbg=232   cterm=bold
+   hi VertSplit       ctermfg=236 ctermbg=233   cterm=bold
    hi VisualNOS                   ctermbg=238
    hi Visual                      ctermbg=235
    hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
@@ -227,10 +227,13 @@ if &t_Co > 255
    hi Comment         ctermfg=59
    hi CursorColumn                ctermbg=236
    hi ColorColumn                 ctermbg=236
-   hi LineNr          ctermfg=250 ctermbg=236
-   hi NonText         ctermfg=59
+   hi LineNr          ctermfg=250 ctermbg=233
+   hi NonText         ctermfg=233
 
    hi SpecialKey      ctermfg=59
+      hi TabLineFill     ctermfg=233 ctermbg=208
+      hi TabLine         ctermbg=233 ctermfg=253 cterm=none
+      hi TabLineSel      ctermfg=208 ctermbg=233
 
    if exists("g:rehash256") && g:rehash256 == 1
        hi Normal       ctermfg=252 ctermbg=234
@@ -268,6 +271,7 @@ if &t_Co > 255
        hi LineNr          ctermfg=239 ctermbg=235
        hi NonText         ctermfg=239
        hi SpecialKey      ctermfg=239
+
    endif
 end
 
