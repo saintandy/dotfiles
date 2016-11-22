@@ -81,6 +81,20 @@ set wildmenu
 set tabstop=4
 set scrolljump=5
 
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+vnoremap / /\v
+vnoremap ? ?\v
+
+cmap w!! w !sudo tee >/dev/null %
+command! Q :q
+command! W :w
+
+map . ;!
+
 syntax on
 set bg=dark
 set t_Co=256
