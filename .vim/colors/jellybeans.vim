@@ -383,7 +383,7 @@ if version >= 700
 
   call s:X("TabLine","666666","000000","italic","","Black")
   call s:X("TabLineFill","9098a0","","","","White")
-  call s:X("TabLineSel","888888","000000","italic,bold",s:termBlack,"White")
+  call s:X("TabLineSel","dddddd","000000","italic,bold",s:termBlack,"White")
 
   " Auto-completion
   call s:X("Pmenu","ffffff","606060","","White",s:termBlack)
