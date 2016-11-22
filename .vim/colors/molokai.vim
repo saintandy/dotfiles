@@ -26,7 +26,6 @@ else
     let s:molokai_original = 0
 endif
 
-
 hi Boolean         guifg=#AE81FF
 hi Character       guifg=#E6DB74
 hi Number          guifg=#AE81FF
@@ -149,7 +148,7 @@ if &t_Co > 255
    hi Number          ctermfg=135
    hi String          ctermfg=154
    hi Conditional     ctermfg=161               cterm=bold
-   hi Constant        ctermfg=135               cterm=bold
+   hi Constant        ctermfg=208               cterm=bold
    hi Cursor          ctermfg=16  ctermbg=253
    hi Debug           ctermfg=225               cterm=bold
    hi Define          ctermfg=81
@@ -174,7 +173,7 @@ if &t_Co > 255
 
    hi keyword         ctermfg=161               cterm=bold
    hi Label           ctermfg=161               cterm=none
-   hi Macro           ctermfg=193
+   hi Macro           ctermfg=118
    hi SpecialKey      ctermfg=81
 
    hi MatchParen      ctermfg=233  ctermbg=208 cterm=bold
@@ -227,7 +226,7 @@ if &t_Co > 255
    hi Comment         ctermfg=59
    hi CursorColumn                ctermbg=236
    hi ColorColumn                 ctermbg=236
-   hi LineNr          ctermfg=250 ctermbg=233
+   hi LineNr          ctermfg=251 ctermbg=233
    hi NonText         ctermfg=233
 
    hi SpecialKey      ctermfg=59
@@ -253,7 +252,7 @@ if &t_Co > 255
        hi Error           ctermfg=222 ctermbg=233
        hi Exception       ctermfg=154               cterm=bold
        hi Float           ctermfg=141
-       hi Function        ctermfg=154
+       hi Function        ctermfg=208
        hi Identifier      ctermfg=208
 
        hi Keyword         ctermfg=197               cterm=bold
