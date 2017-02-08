@@ -31,20 +31,28 @@ plugins=(gitfast)
 source $ZSH/oh-my-zsh.sh
 
 # mkdir, cd into it
-mkcd () {
+mkcd() {
     mkdir -p "$*"
     cd "$*"
 }
 
-cdl () {
+cdl() {
     cd "$*"
     ls -la
+}
+
+swap() {
+    # hackish as fuck
+    mv "$1" "FOOFOOFOO.fooaux"
+    mv "$2" "$1"
+    mv "FOOFOOFOO.fooaux" "$2"
 }
 
 alias -s html=vim
 alias -s php=vim
 alias -s css=vim
 alias -s js=vim
+alias -s jsx=vim
 alias -s py=vim
 alias -s sql=vim
 alias -s cpp=vim
@@ -53,6 +61,9 @@ alias -s c=vim
 alias -s h=vim
 alias -s txt=vim
 alias -s log=tail
+
+alias vi="nvim --cmd \"lang en_US\""
+alias python="python3"
 
 setopt AUTO_PUSHD
 setopt BRACE_CCL
