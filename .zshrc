@@ -38,7 +38,7 @@ mkcd() {
 
 cdl() {
     cd "$*"
-    ls -la
+    ls -lha
 }
 
 swap() {
@@ -47,6 +47,23 @@ swap() {
     mv "$2" "$1"
     mv "FOOFOOFOO.fooaux" "$2"
 }
+
+git_diff_wrapper() {
+    vimdiff "$1" "$2"
+}
+
+# subdirectory-grep
+sgrep() {
+    grep -nr "$1" .
+}
+
+#subdirectory-find
+sfind() {
+	find . | grep "$1"
+}
+
+alias sg=sgrep
+alias sf=sfind
 
 alias -s html=vim
 alias -s php=vim
