@@ -15,6 +15,8 @@ My dotfiles for OSX and Linux.
     * `sfind` (_subfolder find_) - `find . | grep "$1"`
 * **Default** theme: `suvash`
 
+##### `.vim` - contains colorschemes and things I don't import with `vundle`
+* **Colorschemes** - custom `hybrid.vim`
 
 ## TODO & will contain
 * Add a `config` script to do the full job on a new machine :)
