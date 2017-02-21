@@ -36,17 +36,18 @@ call vundle#begin()
 " git
     Plugin 'airblade/vim-gitgutter'
 " colorschemes
-    Plugin 'romainl/Apprentice'
-    Plugin 'tlhr/anderson.vim'
-    Plugin 'joshdick/onedark.vim'
-    Plugin 'monkoose/boa.vim'
-    Plugin 'sjl/badwolf'
-    Plugin 'jpo/vim-railscasts-theme'
-    Plugin 'kamwitsta/mythos'
-    Plugin 'YorickPeterse/happy_hacking.vim'
+    " Plugin 'romainl/Apprentice'
+    " Plugin 'tlhr/anderson.vim'
+    " Plugin 'joshdick/onedark.vim'
+    " Plugin 'monkoose/boa.vim'
+    " Plugin 'sjl/badwolf'
+    " Plugin 'jpo/vim-railscasts-theme'
+    " Plugin 'kamwitsta/mythos'
+    " Plugin 'YorickPeterse/happy_hacking.vim'
     Plugin 'maksimr/vim-jsbeautify'
     Plugin 'zanglg/nova.vim'
-    Plugin 'roosta/vim-srcery'
+    " Plugin 'roosta/vim-srcery'
+    Plugin 'vim-scripts/pyte'
 " CSS color highlight
     Plugin 'skammer/vim-css-color'
 
@@ -76,6 +77,7 @@ vnoremap <C-c> :call NERDComment(0,"toggle")<CR>
 
 " YouCompleteMe
 let g:ycm_show_diagnostics_ui = 0
+let g:enable_ycm_at_startup = 0
 
 
 
@@ -107,7 +109,7 @@ let g:airline_symbols.linenr = ''
 " NERDTree
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-autocmd VimEnter * NERDTree
+" autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
 
@@ -117,7 +119,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 " folding
 " setlocal foldmethod=indent
 
-
+set wildignorecase
 set laststatus=2
 set nospell
 set hlsearch
