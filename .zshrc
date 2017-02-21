@@ -54,7 +54,7 @@ git_diff_wrapper() {
 
 # subdirectory-grep
 sgrep() {
-    grep -nr "$1" .
+    grep -nir "$1" .
 }
 
 #subdirectory-find
