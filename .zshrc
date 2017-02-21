@@ -59,7 +59,7 @@ sgrep() {
 
 #subdirectory-find
 sfind() {
-	find . | grep "$1"
+	find . | grep -i "$1"
 }
 
 alias sg=sgrep
