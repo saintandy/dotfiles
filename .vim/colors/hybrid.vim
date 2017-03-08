@@ -452,3 +452,8 @@ let &background = s:style
 " THE SOFTWARE.
 
 " }}}
+
+hi GitGutterAdd          guifg=#b5bd68
+hi GitGutterChange       guifg=#8abeb7
+hi GitGutterDelete       guifg=#cc6666
+hi GitGutterChangeDelete guifg=#de9357
