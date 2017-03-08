@@ -7,6 +7,11 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+call vundle#end()            " required
+filetype plugin indent on    " required
+let anyfold_activate=1
+set foldlevel=0
+
 " vundle
     Plugin 'gmarik/Vundle.vim'
 " NERD
@@ -16,25 +21,31 @@ call vundle#begin()
 " TagBar
     Plugin 'majutsushi/tagbar'
 " jsx - for csacademy development
-    Plugin 'lervag/vim-latex'
-    Plugin 'mxw/vim-jsx'
-    Plugin 'jbgutierrez/vim-babel'
-    Plugin 'mattn/webapi-vim'
-    Plugin 'elzr/vim-json'
+    " Plugin 'jsx/jsx.vim'
+    Plugin 'pangloss/vim-javascript'
+    Plugin 'MaxMEllon/vim-jsx-pretty'
+    " Plugin 'lervag/vim-latex'
+    " Plugin 'mxw/vim-jsx'
+    " Plugin 'jbgutierrez/vim-babel'
+    " Plugin 'mattn/webapi-vim'
+    Plugin 'leshill/vim-json'
 " python
     Plugin 'sentientmachine/Pretty-Vim-Python'
-" Plugin 'MaxMEllon/vim-jsx-pretty'
-    Plugin 'pangloss/vim-javascript'
 " folding
-    Plugin 'tmhedberg/SimpylFold'
-    Plugin 'Konfekt/FastFold'
+    " Plugin 'tmhedberg/SimpylFold'
+    " Plugin 'Konfekt/FastFold'
+    Plugin 'pseewald/anyfold'
 " YCM
     Plugin 'Valloric/YouCompleteMe'
-" airline
+" airline, tabline
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
+    Plugin 'mkitt/tabline.vim'
 " git
     Plugin 'airblade/vim-gitgutter'
+    Plugin 'tpope/vim-fugitive'
+" terminal
+    Plugin 'vim-scripts/Conque-Shell'
 " colorschemes
     " Plugin 'romainl/Apprentice'
     " Plugin 'tlhr/anderson.vim'
@@ -48,12 +59,16 @@ call vundle#begin()
     Plugin 'zanglg/nova.vim'
     " Plugin 'roosta/vim-srcery'
     Plugin 'vim-scripts/pyte'
+    Plugin 'reedes/vim-colors-pencil'
+    Plugin 'chriskempson/base16-vim'
 " CSS color highlight
     Plugin 'skammer/vim-css-color'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-
+" Other
+    Plugin 'terryma/vim-multiple-cursors'
+    Plugin 'tpope/vim-surround'
+    Plugin 'tpope/vim-repeat'
+    Plugin 'nathanaelkane/vim-indent-guides'
+    Plugin 'MattesGroeger/vim-bookmarks'
 
 
 " air-line
@@ -73,6 +88,14 @@ vnoremap <C-c> :call NERDComment(0,"toggle")<CR>
 " We don't really need this though, somehow it works
     " nnoremap <C-d> :call NERDComment(12,"toggle")<CR>
     " vnoremap <C-d> :call NERDComment(12,"toggle")<CR>
+" NERDTree
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+autocmd VimEnter * NERDTree
+
+nnoremap <C-d> :NERDTree<CR>
+vnoremap <C-d> :NERDTree<CR>
+
 
 
 " YouCompleteMe
@@ -81,7 +104,9 @@ let g:enable_ycm_at_startup = 0
 
 
 
-" unicode symbols
+" airline
+let g:airline#extensions#tabline#enabled = 1
+" airline unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
@@ -106,11 +131,9 @@ let g:airline_symbols.linenr = ''
 
 
 
-" NERDTree
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-" autocmd VimEnter * NERDTree
+
 autocmd VimEnter * wincmd p
+" autocmd VimEnter *.{js,jsx,c,cpp,py} IndentGuidesToggle
 
 
 " auto load
@@ -135,12 +158,33 @@ set noswapfile
 set scrolljump=5
 set softtabstop=4
 set nofoldenable
+set ignorecase
 set cursorline
+set incsearch
+" for slow terminals
+set lazyredraw
+set history=1000
+set undolevels=1000
+set ttyfast
+" set synmaxcol=128
+" syntax sync minlines=256
 
 syntax on
 set bg=dark
 set t_Co=256
-colo hybrid
+colorscheme hybrid
+" colorscheme base16-twilight
+" colorscheme jellybeans
+
+
+
+" indent guides
+let g:indent_guides_start_level = 1
+let g:indent_guides_guide_size = 1
+" hi IndentGuidesOdd  ctermbg=blue
+" hi IndentGuidesEven ctermbg=red
+
+
 
 if has("termguicolors")
     set termguicolors
@@ -149,7 +193,9 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 
 
-
+" long wrapping lines
+nnoremap j gj
+nnoremap k gk
 
 
 
@@ -160,7 +206,7 @@ cmap w!! w !sudo tee >/dev/null %
 command! Q :q
 command! W :w
 
-map . ;!
+" map . ;!
 nnoremap 0 ^
 
 map <C-h> <C-W>h
@@ -178,11 +224,12 @@ vnoremap ; :
 
 nnoremap # #N
 
-nnoremap ,h :tabprev<cr>
-nnoremap ,l :tabnext<cr>
-nnoremap ,t :tabnew<cr>
+nnoremap <C-y> :tabprev<cr>
+nnoremap <C-o> :tabnext<cr>
+nnoremap <C-t> :tabnew<cr>
 
 " inoremap {<CR> {<CR>}<C-o>O
+
 
 
 " compile functions
