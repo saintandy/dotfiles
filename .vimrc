@@ -31,6 +31,7 @@ set foldlevel=0
     Plugin 'leshill/vim-json'
 " python
     Plugin 'sentientmachine/Pretty-Vim-Python'
+    Plugin 'vim-scripts/django.vim'
 " folding
     " Plugin 'tmhedberg/SimpylFold'
     " Plugin 'Konfekt/FastFold'
@@ -42,10 +43,8 @@ set foldlevel=0
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'mkitt/tabline.vim'
 " git
-    Plugin 'airblade/vim-gitgutter'
     Plugin 'tpope/vim-fugitive'
-" terminal
-    Plugin 'vim-scripts/Conque-Shell'
+    Plugin 'airblade/vim-gitgutter'
 " colorschemes
     " Plugin 'romainl/Apprentice'
     " Plugin 'tlhr/anderson.vim'
@@ -61,13 +60,17 @@ set foldlevel=0
     Plugin 'vim-scripts/pyte'
     Plugin 'reedes/vim-colors-pencil'
     Plugin 'chriskempson/base16-vim'
+    Plugin 'Valloric/vim-valloric-colorscheme'
 " CSS color highlight
     Plugin 'skammer/vim-css-color'
+" Navitgation
+    Plugin 'ctrlpvim/ctrlp.vim'
+    " Plugin 'easymotion/vim-easymotion'
 " Other
     Plugin 'terryma/vim-multiple-cursors'
     Plugin 'tpope/vim-surround'
     Plugin 'tpope/vim-repeat'
-    Plugin 'nathanaelkane/vim-indent-guides'
+    " Plugin 'nathanaelkane/vim-indent-guides'
     Plugin 'MattesGroeger/vim-bookmarks'
 
 
@@ -91,7 +94,7 @@ vnoremap <C-c> :call NERDComment(0,"toggle")<CR>
 " NERDTree
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-autocmd VimEnter * NERDTree
+" autocmd VimEnter * NERDTree
 
 nnoremap <C-d> :NERDTree<CR>
 vnoremap <C-d> :NERDTree<CR>
@@ -177,15 +180,6 @@ colorscheme hybrid
 " colorscheme jellybeans
 
 
-
-" indent guides
-let g:indent_guides_start_level = 1
-let g:indent_guides_guide_size = 1
-" hi IndentGuidesOdd  ctermbg=blue
-" hi IndentGuidesEven ctermbg=red
-
-
-
 if has("termguicolors")
     set termguicolors
 endif
@@ -229,6 +223,9 @@ nnoremap <C-o> :tabnext<cr>
 nnoremap <C-t> :tabnew<cr>
 
 " inoremap {<CR> {<CR>}<C-o>O
+
+
+" django
 
 
 

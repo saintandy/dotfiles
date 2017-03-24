@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-EDITOR=vim
-editor=vim
+EDITOR=vi
+editor=vi
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -57,6 +57,10 @@ sgrep() {
     grep -nir "$1" .
 }
 
+fuckslow() {
+    pkill -15 -u saintandy
+}
+
 #subdirectory-find
 sfind() {
 	find . | grep -i "$1"
@@ -65,18 +69,18 @@ sfind() {
 alias sg=sgrep
 alias sf=sfind
 
-alias -s html=vim
-alias -s php=vim
-alias -s css=vim
-alias -s js=vim
-alias -s jsx=vim
-alias -s py=vim
-alias -s sql=vim
-alias -s cpp=vim
-alias -s y=vim
-alias -s c=vim
-alias -s h=vim
-alias -s txt=vim
+alias -s html=vi
+alias -s php=vi
+alias -s css=vi
+alias -s js=vi
+alias -s jsx=vi
+alias -s py=vi
+alias -s sql=vi
+alias -s cpp=vi
+alias -s y=vi
+alias -s c=vi
+alias -s h=vi
+alias -s txt=vi
 alias -s log=tail
 
 alias vi="nvim --cmd \"lang en_US\""
