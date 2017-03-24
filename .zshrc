@@ -135,7 +135,7 @@ nvm() {
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
     nvm $@
 }
-# alias vim='nvim --cmd "lang en_US"'
+alias vi='nvim --cmd "lang en_US" --cmd "source ~/.vimrc"'
 
 # Steppenwolf
 sudo() {
