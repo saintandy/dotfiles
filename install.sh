@@ -5,6 +5,29 @@ echo ""
 echo ""
 
 
+echo "Setting up brew."
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+
+echo ""
+echo ""
+
+
+echo "Setting up git."
+brew install git
+git config --global user.name saintandy
+git config --global user.email vladtarniceru@gmail.com
+git config --global diff.tool vimdiff
+git config --global merge.tool vimdiff
+git config --global core.editor vim
+git config --global color.status auto
+git config --global color.branch auto
+git config --global color.diff auto
+git config --global color.interactive auto
+git config --global pull.rebase true
+git config --global core.ignorecase true
+
+
 echo "Setting up shell."
 echo "--- Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -40,7 +63,6 @@ cd ~/.vim/bundle/YouCompleteMe
 echo ""
 echo ""
 
-
 echo "Setting up fonts."
 echo "--- Moving fonts to /Library/Fonts/"
 cp fonts/* /Library/Fonts/
@@ -53,3 +75,13 @@ echo ""
 echo "Setting up commands."
 echo "--- Installing wget"
 brew install wget
+
+
+echo ""
+echo ""
+
+
+echo "Setting up iterm."
+echo "--- Installing iterm"
+brew install iterm
+echo "--- Please load the hybrid theme (this must be made manually)"
