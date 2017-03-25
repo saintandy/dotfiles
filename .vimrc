@@ -28,6 +28,7 @@ set foldlevel=0
     " Plugin 'mxw/vim-jsx'
     " Plugin 'jbgutierrez/vim-babel'
     " Plugin 'mattn/webapi-vim'
+    Plugin 'alvan/vim-closetag'
     Plugin 'leshill/vim-json'
 " python
     Plugin 'sentientmachine/Pretty-Vim-Python'
@@ -102,15 +103,15 @@ vnoremap <C-d> :NERDTree<CR>
 
 
 " YouCompleteMe
-" let g:ycm_show_diagnostics_ui = 0
-" let g:enable_ycm_at_startup = 0
-" let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
-" let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
-" let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-" let g:ycm_complete_in_comments = 1 " Completion in comments
-" let g:ycm_complete_in_strings = 1 " Completion in string
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-" let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_show_diagnostics_ui = 0
+let g:enable_ycm_at_startup = 0
+let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+let g:ycm_complete_in_comments = 1 " Completion in comments
+let g:ycm_complete_in_strings = 1 " Completion in string
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 
 
