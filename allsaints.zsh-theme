@@ -2,12 +2,7 @@ local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 display_battery() {
     local percent=$(pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d";")
-
-    
-
     percent="$(echo $percent | rev | cut -c 2- | rev)"
-
-    # echo "$percent" | rev | cut -c 1- | rev
 
     if [ "$percent" -gt "0" ]; then
         bar="▁"
@@ -25,13 +20,13 @@ display_battery() {
     fi
     if [ "$percent" -gt "50" ]; then
         bar="▅"
-        color="%F{green}"
     fi
     if [ "$percent" -gt "62" ]; then
         bar="▆"
     fi
     if [ "$percent" -gt "75" ]; then
         bar="▇"
+        color="%F{green}"
     fi
     if [ "$percent" -gt "87" ]; then
         bar="█"
