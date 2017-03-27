@@ -35,6 +35,7 @@ echo "--- Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 echo "--- Adding .zshrc"
 cp .zshrc ~/.zshrc
+cp allsaints.zsh-theme ~/.oh-my-zsh/themes/
 
 
 echo ""
