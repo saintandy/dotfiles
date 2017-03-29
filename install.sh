@@ -47,6 +47,11 @@ echo "--- Installing vim"
 brew install vim
 echo "--- Installing neovim"
 brew install neovim
+brew install python
+brew install python3
+sudo easy_install pip
+pip2 install --user neovim
+pip3 install --user neovim
 echo "--- Adding .vimrc"
 cp .vimrc ~/.vimrc
 echo "--- Creating .vim directory"
