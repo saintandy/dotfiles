@@ -33,6 +33,7 @@ set foldlevel=0
 " python
     Plugin 'sentientmachine/Pretty-Vim-Python'
     Plugin 'vim-scripts/django.vim'
+    Plugin 'davidhalter/jedi-vim'
 " folding
     " Plugin 'tmhedberg/SimpylFold'
     " Plugin 'Konfekt/FastFold'
@@ -62,8 +63,9 @@ set foldlevel=0
     Plugin 'reedes/vim-colors-pencil'
     Plugin 'chriskempson/base16-vim'
     Plugin 'Valloric/vim-valloric-colorscheme'
+    Plugin 'jnurmine/Zenburn'
 " CSS color highlight
-    Plugin 'skammer/vim-css-color'
+    Plugin 'ap/vim-css-color'
 " Navitgation
     Plugin 'ctrlpvim/ctrlp.vim'
     " Plugin 'easymotion/vim-easymotion'
@@ -92,10 +94,23 @@ vnoremap <C-c> :call NERDComment(0,"toggle")<CR>
 " We don't really need this though, somehow it works
     " nnoremap <C-d> :call NERDComment(12,"toggle")<CR>
     " vnoremap <C-d> :call NERDComment(12,"toggle")<CR>
+
+
 " NERDTree
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 " autocmd VimEnter * NERDTree
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
 
 nnoremap <C-d> :NERDTree<CR>
 vnoremap <C-d> :NERDTree<CR>
@@ -170,7 +185,7 @@ set scrolljump=5
 set softtabstop=4
 set nofoldenable
 set ignorecase
-set cursorline
+" set cursorline
 set incsearch
 " for slow terminals
 set lazyredraw
@@ -179,7 +194,6 @@ set undolevels=1000
 set ttyfast
 " set synmaxcol=128
 " syntax sync minlines=256
-set rnu
 
 syntax on
 set bg=dark
