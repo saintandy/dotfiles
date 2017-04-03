@@ -129,7 +129,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 
-export NVM_DIR="/home/dionyziz/.nvm"
+export NVM_DIR="/home/saintandy/.nvm"
 
 nvm() {
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
