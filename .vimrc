@@ -64,6 +64,7 @@ set foldlevel=0
     Plugin 'chriskempson/base16-vim'
     Plugin 'Valloric/vim-valloric-colorscheme'
     Plugin 'jnurmine/Zenburn'
+    Plugin 'yuttie/hydrangea-theme'
 " CSS color highlight
     Plugin 'ap/vim-css-color'
 " Navitgation
@@ -75,6 +76,7 @@ set foldlevel=0
     Plugin 'tpope/vim-repeat'
     " Plugin 'nathanaelkane/vim-indent-guides'
     Plugin 'MattesGroeger/vim-bookmarks'
+    Plugin 'lrvick/Conque-Shell'
 
 
 " air-line
@@ -200,6 +202,7 @@ set bg=dark
 set t_Co=256
 colorscheme hybrid
 " colorscheme base16-twilight
+" colorscheme hydrangea
 " colorscheme jellybeans
 
 
@@ -241,8 +244,8 @@ vnoremap ; :
 
 nnoremap # #N
 
-nnoremap <C-y> :tabprev<cr>
-nnoremap <C-o> :tabnext<cr>
+nnoremap ˙ :tabprev<cr>
+nnoremap ¬ :tabnext<cr>
 nnoremap <C-t> :tabnew<cr>
 
 " inoremap {<CR> {<CR>}<C-o>O
