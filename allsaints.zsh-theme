@@ -36,7 +36,7 @@ display_battery() {
 }
 
 PROMPT='%F{magenta}‹$(users | wc -w | cut -c 8-):$(ls ~/Notes | wc -w | cut -c 8-)› \
-$(virtualenv_prompt_info)[03m%}%{$fg[cyan]%}%c \
+$(virtualenv_prompt_info)%{$fg[cyan]%}%c \
 $(git_prompt_info) 
 $(display_battery) %{$fg[red]%}%(!.#.»)%{$reset_color%} '
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
