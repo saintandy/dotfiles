@@ -1,0 +1,7 @@
+nnoremap : ;
+nnoremap ; :
+vnoremap : ;
+vnoremap ; :
+
+set hlsearch
+set incsearch
