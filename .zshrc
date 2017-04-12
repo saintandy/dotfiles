@@ -144,3 +144,6 @@ sudo() {
     fi
     command sudo "$@" 1>/dev/null
 }
+
+# Instacar development
+alias ink='~/code/ink'
