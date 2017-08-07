@@ -84,7 +84,7 @@ alias -s txt=vi
 alias -s log=tail
 
 alias vi="nvim --cmd \"lang en_US\""
-alias python="python3"
+# alias python="python3"
 
 setopt AUTO_PUSHD
 setopt BRACE_CCL
@@ -142,8 +142,9 @@ sudo() {
     if ! (command sudo -n true 2>/dev/null) ; then
         echo "ENTRANCE NOT FOR EVERYBODY. FOR MADMEN ONLY!"
     fi
-    command sudo "$@" 1>/dev/null
+    command sudo "$@" # 1>/dev/null
 }
 
 # Instacar development
 alias ink='~/code/ink'
+export PATH="$HOME/.fastlane/bin:$PATH"
