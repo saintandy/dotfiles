@@ -83,6 +83,8 @@ echo ""
 echo "Setting up commands."
 echo "--- Installing wget"
 brew install wget
+brew install node
+npm install -g vtop
 
 
 echo ""

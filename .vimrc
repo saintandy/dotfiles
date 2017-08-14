@@ -1,5 +1,5 @@
 " default shell set shell=/bin/bash
-
+" 
 " on the first day God created Vundle
 set nocompatible
 filetype off
@@ -24,16 +24,16 @@ set foldlevel=0
     " Plugin 'jsx/jsx.vim'
     Plugin 'pangloss/vim-javascript'
     Plugin 'MaxMEllon/vim-jsx-pretty'
+    Plugin 'ternjs/tern_for_vim'
     " Plugin 'lervag/vim-latex'
-    " Plugin 'mxw/vim-jsx'
     " Plugin 'jbgutierrez/vim-babel'
     " Plugin 'mattn/webapi-vim'
     Plugin 'alvan/vim-closetag'
     Plugin 'leshill/vim-json'
 " python
-    Plugin 'sentientmachine/Pretty-Vim-Python'
+    " Plugin 'sentientmachine/Pretty-Vim-Python'
     Plugin 'vim-scripts/django.vim'
-    Plugin 'davidhalter/jedi-vim'
+    " Plugin 'davidhalter/jedi-vim'
 " folding
     " Plugin 'tmhedberg/SimpylFold'
     " Plugin 'Konfekt/FastFold'
@@ -56,7 +56,10 @@ set foldlevel=0
     " Plugin 'jpo/vim-railscasts-theme'
     " Plugin 'kamwitsta/mythos'
     " Plugin 'YorickPeterse/happy_hacking.vim'
+    Plugin 'JarrodCTaylor/spartan'
+    Plugin 'jackiehluo/vim-material'
     Plugin 'maksimr/vim-jsbeautify'
+    Plugin 'YorickPeterse/happy_hacking.vim'
     Plugin 'zanglg/nova.vim'
     " Plugin 'roosta/vim-srcery'
     Plugin 'vim-scripts/pyte'
@@ -65,6 +68,10 @@ set foldlevel=0
     Plugin 'Valloric/vim-valloric-colorscheme'
     Plugin 'jnurmine/Zenburn'
     Plugin 'yuttie/hydrangea-theme'
+    Plugin 'jacoborus/tender.vim'
+    Plugin 'rakr/vim-two-firewatch'
+    Plugin 'mhartington/oceanic-next'
+    Plugin 'whatyouhide/vim-gotham'
 " CSS color highlight
     Plugin 'ap/vim-css-color'
 " Navitgation
@@ -77,6 +84,9 @@ set foldlevel=0
     " Plugin 'nathanaelkane/vim-indent-guides'
     Plugin 'MattesGroeger/vim-bookmarks'
     Plugin 'lrvick/Conque-Shell'
+    " Plugin 'nathanaelkane/vim-indent-guides'
+    Plugin 'neovimhaskell/haskell-vim'
+
 
 
 " air-line
@@ -150,9 +160,9 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 " airline symbols
 let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
+" let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
+" let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
@@ -170,6 +180,8 @@ autocmd QuickFixCmdPost *grep* cwindow
 " folding
 " setlocal foldmethod=indent
 
+" Paste from VIM
+" set clipboard=unnamed
 set wildignorecase
 set laststatus=2
 set nospell
@@ -197,20 +209,9 @@ set ttyfast
 " set synmaxcol=128
 " syntax sync minlines=256
 
-syntax on
-set bg=dark
-set t_Co=256
-colorscheme hybrid
 " colorscheme base16-twilight
 " colorscheme hydrangea
 " colorscheme jellybeans
-
-
-if has("termguicolors")
-    set termguicolors
-endif
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
 
 
 " long wrapping lines
@@ -295,6 +296,33 @@ endfunction
 
 
 
+" listchars
+set listchars=tab:»\ ,extends:›,precedes:‹,space:·,trail:·,eol:¬
+" set list
+
+
+" Indent guides
+" autocmd VimEnter * IndentGuidesToggle
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
+
+" Colorscheme
+syntax on
+set bg=dark
+set t_Co=256
+" colorscheme hybrid
+"
+let g:airline_theme='oceanicnextlight'
+colorscheme OceanicNextLight
+
+if has("termguicolors")
+    set termguicolors
+endif
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+
+
 " mapping the compile functions
 nnoremap ,c :call CompileAndRun()<cr>
 nnoremap ,x :call CodeforcesCompile()<cr>
@@ -303,3 +331,4 @@ nnoremap ,b :call BabelCompile()<cr>
 
 " copy and paste in vim 
 command C !cat % | pbcopy
+
