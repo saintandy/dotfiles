@@ -12,82 +12,6 @@ filetype plugin indent on    " required
 let anyfold_activate=1
 set foldlevel=0
 
-" vundle
-    Plugin 'gmarik/Vundle.vim'
-" NERD
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'Xuyuanp/nerdtree-git-plugin'
-    Plugin 'scrooloose/nerdcommenter'
-" TagBar
-    Plugin 'majutsushi/tagbar'
-" jsx - for csacademy development
-    " Plugin 'jsx/jsx.vim'
-    Plugin 'pangloss/vim-javascript'
-    Plugin 'MaxMEllon/vim-jsx-pretty'
-    Plugin 'ternjs/tern_for_vim'
-    " Plugin 'lervag/vim-latex'
-    " Plugin 'jbgutierrez/vim-babel'
-    " Plugin 'mattn/webapi-vim'
-    Plugin 'alvan/vim-closetag'
-    Plugin 'leshill/vim-json'
-" python
-    " Plugin 'sentientmachine/Pretty-Vim-Python'
-    Plugin 'vim-scripts/django.vim'
-    " Plugin 'davidhalter/jedi-vim'
-" folding
-    " Plugin 'tmhedberg/SimpylFold'
-    " Plugin 'Konfekt/FastFold'
-    Plugin 'pseewald/anyfold'
-" YCM
-    Plugin 'Valloric/YouCompleteMe'
-" airline, tabline
-    Plugin 'vim-airline/vim-airline'
-    Plugin 'vim-airline/vim-airline-themes'
-    Plugin 'mkitt/tabline.vim'
-" git
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'airblade/vim-gitgutter'
-" colorschemes
-    " Plugin 'romainl/Apprentice'
-    " Plugin 'tlhr/anderson.vim'
-    " Plugin 'joshdick/onedark.vim'
-    " Plugin 'monkoose/boa.vim'
-    " Plugin 'sjl/badwolf'
-    " Plugin 'jpo/vim-railscasts-theme'
-    " Plugin 'kamwitsta/mythos'
-    " Plugin 'YorickPeterse/happy_hacking.vim'
-    Plugin 'JarrodCTaylor/spartan'
-    Plugin 'jackiehluo/vim-material'
-    Plugin 'maksimr/vim-jsbeautify'
-    Plugin 'YorickPeterse/happy_hacking.vim'
-    Plugin 'zanglg/nova.vim'
-    " Plugin 'roosta/vim-srcery'
-    Plugin 'vim-scripts/pyte'
-    Plugin 'reedes/vim-colors-pencil'
-    Plugin 'chriskempson/base16-vim'
-    Plugin 'Valloric/vim-valloric-colorscheme'
-    Plugin 'jnurmine/Zenburn'
-    Plugin 'yuttie/hydrangea-theme'
-    Plugin 'jacoborus/tender.vim'
-    Plugin 'rakr/vim-two-firewatch'
-    Plugin 'mhartington/oceanic-next'
-    Plugin 'whatyouhide/vim-gotham'
-" CSS color highlight
-    Plugin 'ap/vim-css-color'
-" Navitgation
-    Plugin 'ctrlpvim/ctrlp.vim'
-    " Plugin 'easymotion/vim-easymotion'
-" Other
-    Plugin 'terryma/vim-multiple-cursors'
-    Plugin 'tpope/vim-surround'
-    Plugin 'tpope/vim-repeat'
-    " Plugin 'nathanaelkane/vim-indent-guides'
-    Plugin 'MattesGroeger/vim-bookmarks'
-    Plugin 'lrvick/Conque-Shell'
-    " Plugin 'nathanaelkane/vim-indent-guides'
-    Plugin 'neovimhaskell/haskell-vim'
-
-
 
 " air-line
 let g:airline_powerline_fonts = 1
@@ -182,6 +106,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 " Paste from VIM
 " set clipboard=unnamed
+set noerrorbells visualbell t_vb=
 set wildignorecase
 set laststatus=2
 set nospell
@@ -212,6 +137,7 @@ set ttyfast
 " colorscheme base16-twilight
 " colorscheme hydrangea
 " colorscheme jellybeans
+colorscheme molokai
 
 
 " long wrapping lines
@@ -314,7 +240,7 @@ set t_Co=256
 " colorscheme hybrid
 "
 let g:airline_theme='oceanicnextlight'
-colorscheme OceanicNextLight
+colorscheme molokai
 
 if has("termguicolors")
     set termguicolors
@@ -332,3 +258,16 @@ nnoremap ,b :call BabelCompile()<cr>
 " copy and paste in vim 
 command C !cat % | pbcopy
 
+
+""" FLOW DE OLIMPIADA ...
+" Make command
+:set makeprg=make\ %<\ LDLIBS=\"-lm\"\ CFLAGS=\"-Wall\ -O2\ -static\"\ CPPFLAGS=\"-Wall\ -O2\ -std=c++11\"
+
+" Mappings
+map <F7> <ESC>:w<CR>:make<CR>
+map <F8> <ESC>:!time ./%<<CR>
+map <F9> <ESC>:w<CR>:make<CR>:!time ./%<<CR>
+
+imap <F7> <ESC>:w<CR>:make<CR>
+imap <F8> <ESC>:!time ./%<<CR>
+imap <F9> <ESC>:w<CR>:make<CR>:!time ./%<<CR>
